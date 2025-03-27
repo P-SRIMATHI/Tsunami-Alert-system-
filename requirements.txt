@@ -1,0 +1,10 @@
+streamlit
+numpy
+tensorflow
+requests
+twilio
+firebase-admin
+psycopg2
+pandas
+scikit-learn
+matplotlib
