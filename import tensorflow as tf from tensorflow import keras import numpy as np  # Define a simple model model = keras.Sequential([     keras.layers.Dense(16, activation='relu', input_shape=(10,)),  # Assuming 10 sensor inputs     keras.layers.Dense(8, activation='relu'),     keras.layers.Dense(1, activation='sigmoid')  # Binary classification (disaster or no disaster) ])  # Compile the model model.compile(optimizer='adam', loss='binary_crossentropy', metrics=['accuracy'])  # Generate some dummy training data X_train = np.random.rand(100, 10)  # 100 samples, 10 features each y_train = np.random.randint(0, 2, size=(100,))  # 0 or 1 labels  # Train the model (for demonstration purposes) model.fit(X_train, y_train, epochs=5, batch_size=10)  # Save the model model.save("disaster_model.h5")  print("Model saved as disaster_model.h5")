@@ -1,0 +1,25 @@
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+
+# Define a simple model
+model = keras.Sequential([
+    keras.layers.Dense(16, activation='relu', input_shape=(10,)),  # Assuming 10 sensor inputs
+    keras.layers.Dense(8, activation='relu'),
+    keras.layers.Dense(1, activation='sigmoid')  # Binary classification (disaster or no disaster)
+])
+
+# Compile the model
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Generate some dummy training data
+X_train = np.random.rand(100, 10)  # 100 samples, 10 features each
+y_train = np.random.randint(0, 2, size=(100,))  # 0 or 1 labels
+
+# Train the model (for demonstration purposes)
+model.fit(X_train, y_train, epochs=5, batch_size=10)
+
+# Save the model
+model.save("disaster_model.h5")
+
+print("Model saved as disaster_model.h5")
