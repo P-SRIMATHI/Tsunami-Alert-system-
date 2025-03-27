@@ -5,7 +5,7 @@ import requests
 from twilio.rest import Client
 import firebase_admin
 from firebase_admin import messaging, credentials
-import psycopg2.binary
+import psycopg2
 
 # Load pre-trained AI model (Placeholder for actual model)
 model = tf.keras.models.load_model("disaster_model.h5")
